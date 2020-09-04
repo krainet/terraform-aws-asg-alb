@@ -160,8 +160,9 @@ resource "aws_lb_listener_rule" "internal" {
   }
 
   condition {
-    field  = var.lb_listener_rule_condition_field
-    values = [var.lb_listener_rule_condition_value]
+    path_pattern {
+      values = [var.lb_listener_rule_condition_value]
+    }
   }
 }
 
@@ -189,8 +190,9 @@ resource "aws_lb_listener_rule" "external" {
   }
 
   condition {
-    field  = var.lb_listener_rule_condition_field
-    values = [var.lb_listener_rule_condition_value]
+    path_pattern {
+      values = [var.lb_listener_rule_condition_value]
+    }
   }
 }
 
